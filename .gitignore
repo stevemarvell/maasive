@@ -1,0 +1,14 @@
+# Emacs
+*.elc
+*~
+
+# Packaging
+.cask
+
+# retries
+playbooks/*.retry
+
+# ansible directories
+
+ansible/cache
+ansible/security/*

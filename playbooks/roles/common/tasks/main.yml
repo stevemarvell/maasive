@@ -1,0 +1,10 @@
+---
+- name: "/etc/hosts changes"
+  become: yes
+  include: hosts.yml
+  tags: os, configuration
+  
+- name: ntp
+  become: yes
+  include: ntp.yml
+  tags: ntp

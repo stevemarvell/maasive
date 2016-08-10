@@ -1,0 +1,28 @@
+---
+- name: install maas rack controller
+  apt: name={{item}} state="present"
+  with_items:
+    - maas
+  tags: package
+
+#- name: install shared secret
+#  shell: echo {{maas_secret}} | maas-rack install-shared-secret
+#  tags: configuration
+  
+  
+# - name: install maas region controller
+#   apt: name={{item}} state="present"
+#   with_items:
+#     - maas-region-controller
+#     - maas-region-api 
+#     - maas-dns
+#   tags: package
+
+# - name: stop maas controller service
+#   service: name="maas-regiond" state="stopped"
+#   tags: configuration
+
+# - name: create config file
+#   template: src=regiond.conf.j2 dest=/etc/maas/regiond.conf
+#   tags: configuration
+ 

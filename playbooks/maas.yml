@@ -1,0 +1,9 @@
+---
+- name: MaaS installation
+  hosts: maas_servers
+  become: yes
+  roles:
+    - common
+    - maas_region
+    # - maas_rack
+    

@@ -1,0 +1,18 @@
+server01  ansible_host=10.1.2.51
+server02  ansible_host=10.1.2.52
+
+[servers]
+server[01:02]
+
+[servers:vars]
+public_iface = enp0s3
+manage_iface = enp0s9
+
+[maas_servers:children]
+servers
+
+[maas_region:children]
+maas_servers
+
+[maas_rack:children]
+maas_servers
